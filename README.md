@@ -49,9 +49,8 @@ echo "Completed sleeping for $SLEEP_DURATION seconds."
 
 <img src="https://github.com/user-attachments/assets/171516f9-46ea-466b-a666-a5303faf1008"/>
 <img src="https://github.com/user-attachments/assets/3b5e59f9-157d-4cbd-8e17-370b6b8bb293"/>
-<br/>  <br/>
-<img src=""/>
-
+<br/> Next click build now and confirm the Job is running successfully  <br/>
+<img src="https://github.com/user-attachments/assets/4ec4f476-8753-4923-90c0-3782bfeb7f3d"/>
 
 
 ## Step 2: 

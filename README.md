@@ -65,6 +65,15 @@ The build durations are plotted over time using `matplotlib`, and a graph is dis
 
 <br/> The output <br/>
 <img src="https://github.com/user-attachments/assets/66130738-62b8-4a14-8545-caeabc1f23a7"/>
+<br/> The script output successfully retrieves information about the Jenkins Demo-Sleep-Job, including a list of its builds. However, it seems the script isn't outputting the build durations or visualizing the data yet.
+
+To gather and visualize the job durations using matplotlib, I need to extract the build timestamps (start and end times) and calculate the durations. I will modify the script so that it fetches the timestamp and duration for each build. The duration is in milliseconds, so it's converted to seconds. Also the script should plot the build durations using matplotlib. <br/> 
+
+```py
+
+
+```
+
 <img src=""/>
 <br/>  <br/>
 <img src=""/>

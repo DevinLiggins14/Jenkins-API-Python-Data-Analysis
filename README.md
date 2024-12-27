@@ -30,14 +30,25 @@ python3 -m pip install python-jenkins matplotlib numpy
 
 
 
-## Step 1: 
+## Step 1: Create a Jenkins Job
 
 <br/> 
- 
+For this project create a Jenkins job that will trigger the sleep command at random in order to generate data
 <br/> 
 
-<img src=""/>
-<img src=""/>
+<img src="https://github.com/user-attachments/assets/8998af24-5bfa-49d8-9017-a50affa0781b"/>
+<br/> Choose build periodically to have the build run on a cron schedule, also enter the following within execute shell  <br/>
+
+```Bash
+# Generate a random sleep duration between 1 and 10 seconds
+SLEEP_DURATION=$((RANDOM % 10 + 1))
+echo "Sleeping for $SLEEP_DURATION seconds..."
+sleep $SLEEP_DURATION
+echo "Completed sleeping for $SLEEP_DURATION seconds."
+```
+
+<img src="https://github.com/user-attachments/assets/171516f9-46ea-466b-a666-a5303faf1008"/>
+<img src="https://github.com/user-attachments/assets/3b5e59f9-157d-4cbd-8e17-370b6b8bb293"/>
 <br/>  <br/>
 <img src=""/>
 

@@ -54,13 +54,13 @@ echo "Completed sleeping for $SLEEP_DURATION seconds."
 <br/> It can also be observed that the job is running successfully every 2 minutes <br/> 
 <img src="https://github.com/user-attachments/assets/34eb8214-00f2-4637-b819-92e57ce422d6"/>
 
-## Step 2: 
+## Step 2: Create and run the Python script
 
 <br/> 
- 
+ I will run the Job-Duration-Metrics.py script under worker_scripts. This Python script connects to the local Jenkins server, retrieves build durations for the Demo-Sleep-Job, and calculates the average build duration. The DurationMetrics class initializes with a Jenkins username and password, allowing authentication to connect to the Jenkins server.  The script then calculates the total build duration and the number of builds, allowing it to compute the average build duration in seconds. The build durations are plotted over time using matplotlib, and a graph is displayed showing the relationship between the time of execution and build duration. The script outputs the average build duration and generates a time-based plot of the job's build durations.
 <br/> 
-
-<img src=""/>
+<br/> The output <br/>
+<img src="https://github.com/user-attachments/assets/66130738-62b8-4a14-8545-caeabc1f23a7"/>
 <img src=""/>
 <br/>  <br/>
 <img src=""/>

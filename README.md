@@ -10,6 +10,25 @@
 
 
 ### **Prerequisites**  
+Before you begin working on this project, ensure you have the following requirements fulfilled:
+
+## System Requirements
+| Requirement      | Version/Details              |
+|------------------|------------------------------|
+| Operating System | RHEL 9                       |
+| Python Version   | Python 3.x                   |
+| Jenkins Server   | Accessible with API enabled  |
+
+## Python Modules
+The following Python modules are required for this project. Install them using `pip`:
+- **python-jenkins**: For interacting with the Jenkins API.
+- **matplotlib**: For data visualization.
+- **numpy**: For numerical data processing.
+
+Install all modules with:
+```bash
+python3 -m pip install python-jenkins matplotlib numpy
+```
 
 
 

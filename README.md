@@ -10,9 +10,7 @@
 
 
 ### **Prerequisites**  
-Before you begin working on this project, ensure you have the following requirements fulfilled:
 
-## System Requirements
 | Requirement      | Version/Details              |
 |------------------|------------------------------|
 | Operating System | RHEL 9                       |

@@ -70,12 +70,122 @@ The build durations are plotted over time using `matplotlib`, and a graph is dis
 To gather and visualize the job durations using matplotlib, I need to extract the build timestamps (start and end times) and calculate the durations. I will modify the script so that it fetches the timestamp and duration for each build. The duration is in milliseconds, so it's converted to seconds. Also the script should plot the build durations using matplotlib. <br/> 
 
 ```py
+import jenkins
+import matplotlib.pyplot as plt
+import numpy as np
+from datetime import datetime
 
+# Connect to Jenkins server
+jenkins_url = 'http://10.1.12.145:8080'
+username = 'admin'
+password = 'admin_password'  # Replace with your Jenkins admin password
+server = jenkins.Jenkins(jenkins_url, username=username, password=password)
+
+# Get job names
+job_names = server.get_jobs()
+print(f"Available Jobs: {[job['name'] for job in job_names]}")
+
+# Get build information for a specific job
+job_name = 'Demo-Sleep-Job'
+job_info = server.get_job_info(job_name)
+print(f"Job Info for {job_name}: {job_info}")
+
+# Extract build numbers and URLs
+builds = job_info['builds']
+build_numbers = [build['number'] for build in builds]
+build_urls = [build['url'] for build in builds]
+
+# Initialize lists for build durations
+build_durations = []
+
+# Loop through builds and fetch start and end times to calculate durations
+for build_number in build_numbers:
+    build_info = server.get_build_info(job_name, build_number)
+    timestamp_start = build_info['timestamp']
+    timestamp_end = build_info['timestamp'] + build_info['duration']  # Assuming duration is in milliseconds
+    duration_seconds = (timestamp_end - timestamp_start) / 1000  # Convert milliseconds to seconds
+    build_durations.append(duration_seconds)
+
+# Plot the build durations
+plt.figure(figsize=(10, 6))
+plt.plot(build_numbers, build_durations, marker='o', color='b', linestyle='-', label='Build Duration')
+plt.title(f'Build Durations for {job_name}')
+plt.xlabel('Build Number')
+plt.ylabel('Duration (seconds)')
+plt.grid(True)
+plt.xticks(np.arange(min(build_numbers), max(build_numbers) + 1, 1))
+plt.legend()
+plt.show()
 
 ```
 
-<img src=""/>
-<br/>  <br/>
+<img src="https://github.com/user-attachments/assets/02a4cf05-bbc5-4fa5-8ce1-8877931cbaf7"/>
+<br/> The following message is due to the fact that the script is running from a non interactive enviroment: /root/Job-Duration-Metrics.py:46: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+ <br/>
+I will make some changes so that the data of the jobs start and stop time can be viewed within the Linux CLI in real time
+ <br/> 
+
+```.py
+import jenkins
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+from datetime import datetime
+
+# Connect to Jenkins API (CHANGE USERNAME AND PASSWORD)
+server = jenkins.Jenkins('http://localhost:8080', username='username', password='password')
+
+# Start time of the job
+start_time = datetime.now()
+
+# Print start time
+print(f"Job started at: {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+# Example job trigger (replace 'your_job_name' with your actual job)
+job_name = 'Job Name'
+server.build_job(job_name)
+
+# Wait for job completion (for demonstration purposes, adjust based on your job's duration)
+time.sleep(10)  # Adjust this for your job's expected duration
+
+# Fetch job details (replace with actual job name and build number)
+last_build = server.get_job_info(job_name)['lastBuild']
+build_number = last_build['number']
+build_info = server.get_build_info(job_name, build_number)
+
+# Collecting job data (replace with actual metrics)
+build_duration = build_info['duration'] / 1000  # Duration in seconds
+job_status = build_info['result']
+
+# Plotting the job duration (just an example, adjust as needed)
+durations = [build_duration]
+status = ['Success' if job_status == 'SUCCESS' else 'Failure']
+
+# Create a bar plot
+fig, ax = plt.subplots()
+ax.bar(status, durations, color='green' if job_status == 'SUCCESS' else 'red')
+ax.set_ylabel('Duration (seconds)')
+ax.set_title(f"Job Duration: {job_name} - {job_status}")
+
+# Show the plot on screen
+plt.show()
+
+# Stop time of the job
+end_time = datetime.now()
+
+# Print end time
+print(f"Job ended at: {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
+
+# Print total duration
+total_duration = end_time - start_time
+print(f"Total duration: {total_duration}")
+
+
+
+```
+ 
 <img src=""/>
 
 

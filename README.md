@@ -192,21 +192,24 @@ https://github.com/user-attachments/assets/4cd7f145-3b73-49ff-9ebd-f560e1843b47
 
 
 
-
-<br/>  <br/>
- 
-<img src=""/>
-
-
-## Step 3: 
+## Step 3: Configure the data view
 
 <br/> 
- 
+ Now that I am able to retrieve the data from the Jenkins job running in real time, now in order to view more of the logs created as well as there start and stop times I will edit the output of the script. I will also remove the matplotlib.pyplot as plt as now I can confirm that the visual representation of the data from the python module will not work with the Linux CLI.  
 <br/> 
 
-<img src=""/>
-<img src=""/>
-<br/>  <br/>
+<img src="https://github.com/user-attachments/assets/840d0f5f-69fd-40f7-afe2-40c11b7238d1"/>
+
+<br/> <br/> 
+
+
+<br/> The updated script connects to the Jenkins server using the provided credentials and retrieves information about the last 50 builds of the Demo-Sleep-Job. It utilizes the python-jenkins library to interact with the Jenkins API and fetch job details such as build number, start time, end time, duration, and status. The script converts timestamps from milliseconds to a human-readable date and time format and calculates the duration of each build in seconds. The extracted data is then displayed in a clear human readable format making it easy to analyze the recent build history of the specified Jenkins job.<br/>
+
+
+
+<br/> <br/> 
+
+
 <img src=""/>
 
 

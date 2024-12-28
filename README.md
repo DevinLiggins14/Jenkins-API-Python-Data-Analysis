@@ -1,10 +1,17 @@
 # Jenkins-API-Python-Data-Analysis
 <h2>Description</h2>
 <br/> 
-
+This project retrieves and displays Jenkins job data using Python and the Jenkins API, providing monitoring for analysis in a Linux environment.
 <br />
 <br/> 
 <br/>
+
+
+
+
+
+https://github.com/user-attachments/assets/a450bd5f-a1de-43ab-b72f-dcc658ebf1fd
+
 
 
 
@@ -207,41 +214,18 @@ https://github.com/user-attachments/assets/4cd7f145-3b73-49ff-9ebd-f560e1843b47
 
 
 
-<br/> <br/> 
 
 
-<img src=""/>
+https://github.com/user-attachments/assets/cebcceb9-0755-4476-8b52-62e95127c0a6
 
 
-## Step 4: 
 
-<br/> 
- 
-<br/> 
 
-<img src=""/>
-<img src=""/>
-<br/>  <br/>
-<img src=""/>
 
-## Step 5: 
 
-<br/> 
- 
-<br/> 
+<br/> Success! This project demonstrates how to interact with the Jenkins API to fetch and analyze job build data directly within a Linux environment. By retrieving and displaying detailed information about the last 50 builds of a specified Jenkins job, the script provides a clear and readable format for monitoring job performance and trends. This solution simplifies build analysis without requiring additional tools, showcasing a practical approach to leveraging Python and Jenkins for streamlined data insights.
 
-<img src=""/>
-<img src=""/>
-<br/>  <br/>
-<img src=""/>
+ <br/> 
 
-## Step 6: 
 
-<br/> 
- 
-<br/> 
 
-<img src=""/>
-<img src=""/>
-<br/>  <br/>
-<img src=""/>

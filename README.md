@@ -205,7 +205,7 @@ https://github.com/user-attachments/assets/19fa384c-c69c-44f4-bc3b-8f4e4ac983e0
 ## Step 3: Configure the data view
 
 <br/> 
- Now that I am able to retrieve the data from the Jenkins job running in real time, now in order to view more of the logs created as well as there start and stop times I will edit the output of the script. I will also remove the matplotlib.pyplot as plt as now I can confirm that the visual representation of the data from the python module will not work with the Linux CLI.  
+ Now that I am able to retrieve the data from the Jenkins job running in real time, in order to view more of the logs created as well as there start and stop times I will edit the output of the script. I will also remove the matplotlib.pyplot as plt as now I can confirm that the visual representation of the data from the python module will not work with the Linux CLI.  
 <br/> 
 
 <img src="https://github.com/user-attachments/assets/840d0f5f-69fd-40f7-afe2-40c11b7238d1"/>

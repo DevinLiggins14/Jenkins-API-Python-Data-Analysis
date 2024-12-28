@@ -63,7 +63,7 @@ echo "Completed sleeping for $SLEEP_DURATION seconds."
 
 ## Step 2: Create and run the Python script
 
-I will run the `Job-Duration-Metrics.py` script under `worker_scripts`. This Python script connects to the local Jenkins server, retrieves build durations for the `Demo-Sleep-Job`, and calculates the average build duration.
+I will run the python script which connects to the local Jenkins server, retrieves build durations for the `Demo-Sleep-Job`, and calculates the average build duration.
 
 The `DurationMetrics` class initializes with a Jenkins username and password, allowing authentication to connect to the Jenkins server. The script then calculates the total build duration and the number of builds, allowing it to compute the average build duration in seconds.
 
